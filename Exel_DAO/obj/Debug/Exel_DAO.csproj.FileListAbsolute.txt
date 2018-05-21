@@ -1,0 +1,5 @@
+C:\Users\root\source\repos\Exel_Project\Exel_DAO\bin\Debug\Exel_DAO.dll
+C:\Users\root\source\repos\Exel_Project\Exel_DAO\bin\Debug\Exel_DAO.pdb
+C:\Users\root\source\repos\Exel_Project\Exel_DAO\obj\Debug\Exel_DAO.csproj.CoreCompileInputs.cache
+C:\Users\root\source\repos\Exel_Project\Exel_DAO\obj\Debug\Exel_DAO.dll
+C:\Users\root\source\repos\Exel_Project\Exel_DAO\obj\Debug\Exel_DAO.pdb
