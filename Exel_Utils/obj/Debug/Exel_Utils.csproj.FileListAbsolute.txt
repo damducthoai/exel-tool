@@ -1,5 +1,0 @@
-C:\Users\root\source\repos\Exel_Project\Exel_Utils\bin\Debug\Exel_Utils.dll
-C:\Users\root\source\repos\Exel_Project\Exel_Utils\bin\Debug\Exel_Utils.pdb
-C:\Users\root\source\repos\Exel_Project\Exel_Utils\obj\Debug\Exel_Utils.csproj.CoreCompileInputs.cache
-C:\Users\root\source\repos\Exel_Project\Exel_Utils\obj\Debug\Exel_Utils.dll
-C:\Users\root\source\repos\Exel_Project\Exel_Utils\obj\Debug\Exel_Utils.pdb

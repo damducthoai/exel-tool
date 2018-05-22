@@ -25,7 +25,7 @@ namespace Exel_DAO
         public bool isExist(BOM_Model_Model t)
         {
             string query = $"select count(*) from {DBHelper.tblBomModel} where component_id= {t.component_id} and model_name='{t.model_name}'";
-            int res = DBHelper.getInstance().excuteCount(query);
+            decimal res = DBHelper.getInstance().excuteCount(query);
             return res > 0;
         }
 

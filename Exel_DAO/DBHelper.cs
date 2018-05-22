@@ -52,16 +52,22 @@ namespace Exel_DAO
             }
             return res;
         }
-        public int excuteCount(string query)
+        public decimal excuteCount(string query)
         {
-            int res = -1;
+            decimal res = -1;
             using (SqlConnection con = getConnection())
             {
                 con.Open();
                 SqlCommand command = new SqlCommand();
                 command.CommandText = query;
                 command.Connection = con;
-                res = Convert.ToInt32(command.ExecuteScalar());
+                try
+                {
+                    res = Convert.ToDecimal(command.ExecuteScalar());
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
             return res;
         }

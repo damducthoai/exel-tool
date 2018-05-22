@@ -37,6 +37,11 @@ namespace Exel_DAO
             DBHelper.getInstance().excuteQuery(query);
             return true;
         }
+        public decimal getComponentIdByName(string name)
+        {
+            string query = $"select component_id from {DBHelper.tblBom} where component_name='{name}'";
+            return DBHelper.getInstance().excuteCount(query);
+        }
 
         public bool update(BOM_Model t)
         {
