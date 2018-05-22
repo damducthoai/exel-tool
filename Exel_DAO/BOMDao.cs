@@ -14,6 +14,11 @@ namespace Exel_DAO
             if (_instance == null) _instance = new BOMDao();
             return _instance;
         }
+        public void clearData()
+        {
+            string query = $"delete from {DBHelper.tblBom}";
+            DBHelper.getInstance().excuteQuery(query);
+        }
         private BOMDao()
         {
 
@@ -45,7 +50,10 @@ namespace Exel_DAO
 
         public bool update(BOM_Model t)
         {
-            throw new NotImplementedException();
+            string query = $"update {DBHelper.tblBom} set component_name = '{t.component_name}', object_description = '{t.object_description}' where component_id={t.component_id}";
+            DBHelper.getInstance().excuteQuery(query);
+            //throw new NotImplementedException();
+            return true;
         }
 
         public bool updateById(decimal id, BOM_Model t)

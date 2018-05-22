@@ -39,10 +39,18 @@ namespace Exel_DAO
         {
             throw new NotImplementedException();
         }
+        public void clearData()
+        {
+            string query = $"delete from {DBHelper.tblBomModel}";
+            DBHelper.getInstance().excuteQuery(query);
+        }
 
         public bool update(BOM_Model_Model t)
         {
-            throw new NotImplementedException();
+            string query = $"update {DBHelper.tblBomModel} set model_name='{t.model_name}', model_value={t.model_value} where component_id={t.component_id} and model_name='{t.model_name}'";
+            DBHelper.getInstance().excuteQuery(query);
+            return true;
+            //throw new NotImplementedException();
         }
 
         public bool updateById(decimal id, BOM_Model_Model t)

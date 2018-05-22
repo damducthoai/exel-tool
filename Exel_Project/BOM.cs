@@ -19,8 +19,9 @@ namespace Exel_Project
             InitializeComponent();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private async void btnSearch_Click(object sender, EventArgs e)
         {
+            await reloadBomAsync();
 
         }
         BOM_Model getBomModel()
@@ -84,7 +85,7 @@ namespace Exel_Project
             using (SqlConnection con = DBHelper.getConnection())
             {
                 con.Open();
-                SqlCommand command = new SqlCommand(DBHelper.getStringSelecteForBomDGV(txtBomPageNum.Value,txtBomPageSize.Value), con);
+                SqlCommand command = new SqlCommand(DBHelper.getStringSelecteForBomDGV(txtBomPageNum.Value,txtBomPageSize.Value, txtSearch.Text), con);
                 dataAdapter.SelectCommand = command;
                 dataAdapter.Fill(dt);
 
@@ -244,6 +245,44 @@ namespace Exel_Project
             {
                 //BomModelModelDAO.getInstance().delete(model);
                 BomModelService.getInstance().delete(model);
+                await reloadBomModel();
+            }catch(Exception e)
+            {
+                message = e.Message;
+            }
+            MessageBox.Show(message);
+        }
+
+        private async void btnUpdateBom_Click(object sender, EventArgs e)
+        {
+            BOM_Model model = getBomModel();
+            await updateBom(model);
+        }
+        async Task updateBom(BOM_Model model)
+        {
+            string message = "Update bom successfully";
+            try
+            {
+                BomService.getInstance().updateBom(model);
+                await reloadBomAsync();
+            }catch(Exception e)
+            {
+                message = e.Message;
+            }
+            MessageBox.Show(message);
+        }
+
+        private async void btnUpdateModel_Click(object sender, EventArgs e)
+        {
+            BOM_Model_Model model = getBomDetail();
+            await updateBomModel(model);
+        }
+        async Task updateBomModel(BOM_Model_Model model)
+        {
+            String message = "Update bom model successfully";
+            try
+            {
+                BomModelService.getInstance().updateBomModel(model);
                 await reloadBomModel();
             }catch(Exception e)
             {

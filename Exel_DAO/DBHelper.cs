@@ -12,9 +12,18 @@ namespace Exel_DAO
         public static string tblBom = "bom";
         public static string tblBomModel = "bom_model";
         public static string selectCmdForBomDGV = $"select component_id as id,component_name as name,object_description as description from {tblBom}";
-        public static string getStringSelecteForBomDGV(decimal page, decimal size)
+        public static string getStringSelecteForBomDGV(decimal page, decimal size, string search)
         {
-            string select = $"select component_id as id,component_name as name,object_description as description from {tblBom} order by id OFFSET {size*(page-1)} ROWS FETCH NEXT {size} ROWS ONLY";
+            string select = "";
+            if (!String.IsNullOrEmpty(search) && !String.IsNullOrWhiteSpace(search))
+            {
+                select = $"select component_id as id,component_name as name,object_description as description from {tblBom} where component_name LIKE '%{search}%' OR object_description LIKE '%{search}%' order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
+            }
+            else
+            {
+                select = $"select component_id as id,component_name as name,object_description as description from {tblBom} order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
+            }
+            
             return select;
         }
         public static string getStringSelecteForBomModelDGV(decimal page, decimal size, decimal id)

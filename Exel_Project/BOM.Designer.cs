@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUpdateBom = new System.Windows.Forms.Button();
             this.btnDeleteBom = new System.Windows.Forms.Button();
             this.btnRefreshBom = new System.Windows.Forms.Button();
             this.btnSaveBomModel = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             this.txtBomPageNum = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUpdateModel = new System.Windows.Forms.Button();
             this.txtComponentModelQuantity = new System.Windows.Forms.TextBox();
             this.btnDeleteBomModelDetail = new System.Windows.Forms.Button();
             this.btnSaveBomModelDetail = new System.Windows.Forms.Button();
@@ -71,6 +73,9 @@
             // 
             // dgvBom
             // 
+            this.dgvBom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBom.Location = new System.Drawing.Point(12, 223);
             this.dgvBom.Name = "dgvBom";
@@ -79,6 +84,9 @@
             // 
             // dgvBomModel
             // 
+            this.dgvBomModel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBomModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBomModel.Location = new System.Drawing.Point(415, 223);
             this.dgvBomModel.Name = "dgvBomModel";
@@ -136,6 +144,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.btnUpdateBom);
             this.groupBox1.Controls.Add(this.btnDeleteBom);
             this.groupBox1.Controls.Add(this.btnRefreshBom);
             this.groupBox1.Controls.Add(this.btnSaveBomModel);
@@ -154,11 +164,21 @@
             this.groupBox1.Controls.Add(this.txtComponentName);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(385, 205);
+            this.groupBox1.Size = new System.Drawing.Size(385, 211);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "bom";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnUpdateBom
+            // 
+            this.btnUpdateBom.Location = new System.Drawing.Point(288, 168);
+            this.btnUpdateBom.Name = "btnUpdateBom";
+            this.btnUpdateBom.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateBom.TabIndex = 18;
+            this.btnUpdateBom.Text = "Update";
+            this.btnUpdateBom.UseVisualStyleBackColor = true;
+            this.btnUpdateBom.Click += new System.EventHandler(this.btnUpdateBom_Click);
             // 
             // btnDeleteBom
             // 
@@ -272,6 +292,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.btnUpdateModel);
             this.groupBox2.Controls.Add(this.txtComponentModelQuantity);
             this.groupBox2.Controls.Add(this.btnDeleteBomModelDetail);
             this.groupBox2.Controls.Add(this.btnSaveBomModelDetail);
@@ -285,10 +310,20 @@
             this.groupBox2.Controls.Add(this.txtComponentModelName);
             this.groupBox2.Location = new System.Drawing.Point(415, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(421, 204);
+            this.groupBox2.Size = new System.Drawing.Size(421, 210);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "model";
+            // 
+            // btnUpdateModel
+            // 
+            this.btnUpdateModel.Location = new System.Drawing.Point(317, 168);
+            this.btnUpdateModel.Name = "btnUpdateModel";
+            this.btnUpdateModel.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateModel.TabIndex = 12;
+            this.btnUpdateModel.Text = "Update";
+            this.btnUpdateModel.UseVisualStyleBackColor = true;
+            this.btnUpdateModel.Click += new System.EventHandler(this.btnUpdateModel_Click);
             // 
             // txtComponentModelQuantity
             // 
@@ -428,6 +463,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtBomModelPageSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBomModelPageNum)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -464,6 +500,8 @@
         private System.Windows.Forms.NumericUpDown txtBomModelPageSize;
         private System.Windows.Forms.NumericUpDown txtBomModelPageNum;
         private System.Windows.Forms.TextBox txtComponentModelQuantity;
+        private System.Windows.Forms.Button btnUpdateBom;
+        private System.Windows.Forms.Button btnUpdateModel;
     }
 }
 

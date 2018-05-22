@@ -16,6 +16,8 @@ namespace Exel_Import_UI
 
         private async Task process()
         {
+            BomModelModelDAO.getInstance().clearData();
+            BOMDao.getInstance().clearData();
             string filePath = txtPath.Text;
             XSSFWorkbook workbook;
             using (FileStream file = new FileStream(filePath, FileMode.Open, FileAccess.Read))

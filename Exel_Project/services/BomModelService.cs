@@ -30,5 +30,12 @@ namespace Exel_Project.services
             if(String.IsNullOrEmpty(model.model_name) || String.IsNullOrWhiteSpace(model.model_name)) throw new Exception("No model was delete");
             if (!BomModelModelDAO.getInstance().delete(model)) throw new Exception("Cannot delete model");
         }
+        public void updateBomModel(BOM_Model_Model model)
+        {
+            if (model.component_id < 1) throw new Exception("Invalid component");
+            if (String.IsNullOrEmpty(model.model_name) || String.IsNullOrWhiteSpace(model.model_name)) throw new Exception("Invalid model name");
+            if (model.model_value < 1) throw new Exception("Model value must greater than 0");
+            BomModelModelDAO.getInstance().update(model);
+        }
     }
 }

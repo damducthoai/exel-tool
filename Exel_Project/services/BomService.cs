@@ -32,5 +32,11 @@ namespace Exel_Project.services
         {
             BOMDao.getInstance().deleteById(id);
         }
+        public void updateBom(BOM_Model model)
+        {
+            if (String.IsNullOrEmpty(model.component_name) || String.IsNullOrWhiteSpace(model.component_name)) throw new Exception("Component name cannot left empty");
+            if (model.component_id < 1) throw new Exception("Invalid component, cannot update");
+            BOMDao.getInstance().update(model);
+        }
     }
 }
