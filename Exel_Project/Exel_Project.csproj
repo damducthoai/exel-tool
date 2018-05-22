@@ -54,6 +54,7 @@
     <Compile Include="MessageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services\BomModelService.cs" />
     <Compile Include="services\BomService.cs" />
     <EmbeddedResource Include="BOM.resx">
       <DependentUpon>BOM.cs</DependentUpon>

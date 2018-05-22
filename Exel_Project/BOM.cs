@@ -36,7 +36,7 @@ namespace Exel_Project
         {
             BOM_Model_Model model = new BOM_Model_Model {
                 component_id = getDecimalFromTextBox(txtComponentId),
-                model_name = txtComponentName.Text,
+                model_name = txtComponentModelName.Text,
                 model_value = getDecimalFromTextBox(txtComponentModelQuantity)
             };
             return model;
@@ -185,9 +185,22 @@ namespace Exel_Project
             }
         }
 
-        private void btnSaveBomModelDetail_Click(object sender, EventArgs e)
+        private async void btnSaveBomModelDetail_Click(object sender, EventArgs e)
         {
-
+            await saveBomModel();
+        }
+        async Task saveBomModel()
+        {
+            string message = "model save successfully";
+            try
+            {
+                BomModelService.getInstance().saveBomModel(getBomDetail());
+                await reloadBomModel();
+            }catch(Exception e)
+            {
+                message = e.Message;
+            }
+            MessageBox.Show(message);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -198,6 +211,45 @@ namespace Exel_Project
         private async void btnRefreshBomModel_Click(object sender, EventArgs e)
         {
             await reloadBomModel();
+        }
+
+        private async void txtBomModelPageNum_ValueChanged(object sender, EventArgs e)
+        {
+            await reloadBomModel();
+        }
+
+        private async void txtBomModelPageSize_ValueChanged(object sender, EventArgs e)
+        {
+            await reloadBomModel();
+        }
+
+        private async void txtBomPageNum_ValueChanged(object sender, EventArgs e)
+        {
+            await reloadBomAsync();
+        }
+
+        private async void txtBomPageSize_ValueChanged(object sender, EventArgs e)
+        {
+            await reloadBomAsync();
+        }
+
+        private async void btnDeleteBomModelDetail_Click(object sender, EventArgs e)
+        {
+            await deleteBomModelAsync(getBomDetail());
+        }
+        async Task deleteBomModelAsync(BOM_Model_Model model)
+        {
+            string message = "model delete successfully";
+            try
+            {
+                //BomModelModelDAO.getInstance().delete(model);
+                BomModelService.getInstance().delete(model);
+                await reloadBomModel();
+            }catch(Exception e)
+            {
+                message = e.Message;
+            }
+            MessageBox.Show(message);
         }
     }
 }

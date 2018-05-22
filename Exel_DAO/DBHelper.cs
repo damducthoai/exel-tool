@@ -32,23 +32,38 @@ namespace Exel_DAO
         {
 
         }
-        public static string connString = "Server=.\\MSSQLSERVER2017;Database=exeltool;Trusted_Connection=true";
+        public static string connString = "Server=.;Database=exeltool;Trusted_Connection=true";
         public static SqlConnection getConnection()
         {
             return new SqlConnection(connString);
         }
         
 
-        public void excuteQuery(string query)
+        public int excuteQuery(string query)
         {
+            int res = -1;
             using (SqlConnection con = getConnection())
             {
                 con.Open();
                 SqlCommand command = new SqlCommand();
                 command.CommandText = query;
                 command.Connection = con;
-                command.ExecuteNonQuery();
+                res = command.ExecuteNonQuery();
             }
+            return res;
+        }
+        public int excuteCount(string query)
+        {
+            int res = -1;
+            using (SqlConnection con = getConnection())
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Connection = con;
+                res = Convert.ToInt32(command.ExecuteScalar());
+            }
+            return res;
         }
         public bool trueOrFalse(string query)
         {

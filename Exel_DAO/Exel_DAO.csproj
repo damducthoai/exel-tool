@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BomModelModelDAO.cs" />
     <Compile Include="BOM_Model.cs" />
     <Compile Include="BOMDao.cs" />
     <Compile Include="BOM_Model_Model.cs" />
