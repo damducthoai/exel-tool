@@ -16,5 +16,25 @@ namespace Exel_Project
         {
             InitializeComponent();
         }
+
+        private async void btnRefreshComponent_Click(object sender, EventArgs e)
+        {
+            await reloadComponentDGVAsync();
+        }
+
+        private async void btnSearchComponent_Click(object sender, EventArgs e)
+        {
+            await reloadComponentDGVAsync();
+        }
+
+        private async void pageNum_ValueChanged(object sender, EventArgs e)
+        {
+            await reloadComponentDGVAsync();
+        }
+
+        private async void pageSize_ValueChanged(object sender, EventArgs e)
+        {
+            await reloadComponentDGVAsync();
+        }
     }
 }

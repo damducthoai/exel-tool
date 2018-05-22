@@ -178,9 +178,9 @@ namespace Exel_Project
                 dataAdapter.Update(dt);
 
                 txtComponentModelName.DataBindings.Clear();
-                txtComponentModelName.DataBindings.Add("Text", bs, "name", true);
+                txtComponentModelName.DataBindings.Add("Text", bs, "model", true);
                 txtComponentModelQuantity.DataBindings.Clear();
-                txtComponentModelQuantity.DataBindings.Add("Text", bs, "quantity", true);
+                txtComponentModelQuantity.DataBindings.Add("Text", bs, "point", true);
 
 
             }

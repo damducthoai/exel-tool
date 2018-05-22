@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtConponentId = new System.Windows.Forms.TextBox();
-            this.txtConponentName = new System.Windows.Forms.TextBox();
-            this.pageNum = new System.Windows.Forms.NumericUpDown();
-            this.pageSize = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbname = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnSearchComponent = new System.Windows.Forms.Button();
-            this.dgvComponent = new System.Windows.Forms.DataGridView();
             this.btnRefreshComponent = new System.Windows.Forms.Button();
+            this.btnSearchComponent = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbname = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearchString = new System.Windows.Forms.TextBox();
+            this.pageSize = new System.Windows.Forms.NumericUpDown();
+            this.pageNum = new System.Windows.Forms.NumericUpDown();
+            this.txtConponentName = new System.Windows.Forms.TextBox();
+            this.txtConponentId = new System.Windows.Forms.TextBox();
+            this.dgvComponent = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponent)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lbname);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtSearchString);
             this.groupBox1.Controls.Add(this.pageSize);
             this.groupBox1.Controls.Add(this.pageNum);
             this.groupBox1.Controls.Add(this.txtConponentName);
@@ -69,19 +69,100 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "component";
             // 
-            // txtConponentId
+            // btnRefreshComponent
             // 
-            this.txtConponentId.Location = new System.Drawing.Point(50, 28);
-            this.txtConponentId.Name = "txtConponentId";
-            this.txtConponentId.Size = new System.Drawing.Size(100, 20);
-            this.txtConponentId.TabIndex = 0;
+            this.btnRefreshComponent.Location = new System.Drawing.Point(263, 151);
+            this.btnRefreshComponent.Name = "btnRefreshComponent";
+            this.btnRefreshComponent.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshComponent.TabIndex = 11;
+            this.btnRefreshComponent.Text = "Refresh";
+            this.btnRefreshComponent.UseVisualStyleBackColor = true;
+            this.btnRefreshComponent.Click += new System.EventHandler(this.btnRefreshComponent_Click);
             // 
-            // txtConponentName
+            // btnSearchComponent
             // 
-            this.txtConponentName.Location = new System.Drawing.Point(50, 65);
-            this.txtConponentName.Name = "txtConponentName";
-            this.txtConponentName.Size = new System.Drawing.Size(100, 20);
-            this.txtConponentName.TabIndex = 1;
+            this.btnSearchComponent.Location = new System.Drawing.Point(168, 151);
+            this.btnSearchComponent.Name = "btnSearchComponent";
+            this.btnSearchComponent.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchComponent.TabIndex = 10;
+            this.btnSearchComponent.Text = "Search";
+            this.btnSearchComponent.UseVisualStyleBackColor = true;
+            this.btnSearchComponent.Click += new System.EventHandler(this.btnSearchComponent_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "search";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(177, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "size";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "page";
+            // 
+            // lbname
+            // 
+            this.lbname.AutoSize = true;
+            this.lbname.Location = new System.Drawing.Point(9, 68);
+            this.lbname.Name = "lbname";
+            this.lbname.Size = new System.Drawing.Size(33, 13);
+            this.lbname.TabIndex = 6;
+            this.lbname.Text = "name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "id";
+            // 
+            // txtSearchString
+            // 
+            this.txtSearchString.Location = new System.Drawing.Point(50, 151);
+            this.txtSearchString.Name = "txtSearchString";
+            this.txtSearchString.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchString.TabIndex = 4;
+            // 
+            // pageSize
+            // 
+            this.pageSize.Location = new System.Drawing.Point(218, 108);
+            this.pageSize.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.pageSize.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.pageSize.Name = "pageSize";
+            this.pageSize.Size = new System.Drawing.Size(120, 20);
+            this.pageSize.TabIndex = 3;
+            this.pageSize.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.pageSize.ValueChanged += new System.EventHandler(this.pageSize_ValueChanged);
             // 
             // pageNum
             // 
@@ -99,89 +180,21 @@
             0,
             0,
             0});
+            this.pageNum.ValueChanged += new System.EventHandler(this.pageNum_ValueChanged);
             // 
-            // pageSize
+            // txtConponentName
             // 
-            this.pageSize.Location = new System.Drawing.Point(218, 108);
-            this.pageSize.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.pageSize.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.pageSize.Name = "pageSize";
-            this.pageSize.Size = new System.Drawing.Size(120, 20);
-            this.pageSize.TabIndex = 3;
-            this.pageSize.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.txtConponentName.Location = new System.Drawing.Point(50, 65);
+            this.txtConponentName.Name = "txtConponentName";
+            this.txtConponentName.Size = new System.Drawing.Size(100, 20);
+            this.txtConponentName.TabIndex = 1;
             // 
-            // textBox3
+            // txtConponentId
             // 
-            this.textBox3.Location = new System.Drawing.Point(50, 151);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "id";
-            // 
-            // lbname
-            // 
-            this.lbname.AutoSize = true;
-            this.lbname.Location = new System.Drawing.Point(9, 68);
-            this.lbname.Name = "lbname";
-            this.lbname.Size = new System.Drawing.Size(33, 13);
-            this.lbname.TabIndex = 6;
-            this.lbname.Text = "name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "page";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(177, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "size";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 154);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "search";
-            // 
-            // btnSearchComponent
-            // 
-            this.btnSearchComponent.Location = new System.Drawing.Point(168, 151);
-            this.btnSearchComponent.Name = "btnSearchComponent";
-            this.btnSearchComponent.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchComponent.TabIndex = 10;
-            this.btnSearchComponent.Text = "Search";
-            this.btnSearchComponent.UseVisualStyleBackColor = true;
+            this.txtConponentId.Location = new System.Drawing.Point(50, 28);
+            this.txtConponentId.Name = "txtConponentId";
+            this.txtConponentId.Size = new System.Drawing.Size(100, 20);
+            this.txtConponentId.TabIndex = 0;
             // 
             // dgvComponent
             // 
@@ -190,15 +203,6 @@
             this.dgvComponent.Name = "dgvComponent";
             this.dgvComponent.Size = new System.Drawing.Size(383, 157);
             this.dgvComponent.TabIndex = 1;
-            // 
-            // btnRefreshComponent
-            // 
-            this.btnRefreshComponent.Location = new System.Drawing.Point(263, 151);
-            this.btnRefreshComponent.Name = "btnRefreshComponent";
-            this.btnRefreshComponent.Size = new System.Drawing.Size(75, 23);
-            this.btnRefreshComponent.TabIndex = 11;
-            this.btnRefreshComponent.Text = "Refresh";
-            this.btnRefreshComponent.UseVisualStyleBackColor = true;
             // 
             // Line
             // 
@@ -211,8 +215,8 @@
             this.Text = "Line";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pageNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponent)).EndInit();
             this.ResumeLayout(false);
 
@@ -228,7 +232,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbname;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSearchString;
         private System.Windows.Forms.NumericUpDown pageSize;
         private System.Windows.Forms.NumericUpDown pageNum;
         private System.Windows.Forms.TextBox txtConponentName;

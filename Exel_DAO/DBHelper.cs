@@ -12,6 +12,19 @@ namespace Exel_DAO
         public static string tblBom = "bom";
         public static string tblBomModel = "bom_model";
         public static string selectCmdForBomDGV = $"select component_id as id,component_name as name,object_description as description from {tblBom}";
+        public static string getQuery4LineComponentDGV(decimal page, decimal size, string search)
+        {
+            string query = "";
+            if(String.IsNullOrEmpty(search) || String.IsNullOrWhiteSpace(search))
+            {
+                query = $"select component_id as id,component_name as name,object_description as description from {tblBom} order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
+            }
+            else
+            {
+                query = $"select component_id as id,component_name as name,object_description as description from {tblBom} where component_name LIKE '%{search}%' OR object_description LIKE '%{search}%' order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
+            }
+            return query;
+        }
         public static string getStringSelecteForBomDGV(decimal page, decimal size, string search)
         {
             string select = "";
@@ -28,7 +41,7 @@ namespace Exel_DAO
         }
         public static string getStringSelecteForBomModelDGV(decimal page, decimal size, decimal id)
         {
-            string select = $"select model_name as name,model_value as quantity from {tblBomModel} where component_id = {id} order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
+            string select = $"select model_name as model,model_value as point from {tblBomModel} where component_id = {id} order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
             return select;
         }
         public static DBHelper _instance;

@@ -97,6 +97,7 @@
             // 
             this.txtComponentId.Location = new System.Drawing.Point(34, 19);
             this.txtComponentId.Name = "txtComponentId";
+            this.txtComponentId.ReadOnly = true;
             this.txtComponentId.Size = new System.Drawing.Size(40, 20);
             this.txtComponentId.TabIndex = 2;
             this.txtComponentId.TextChanged += new System.EventHandler(this.txtComponentId_TextChanged);
@@ -105,6 +106,7 @@
             // 
             this.txtComponentName.Location = new System.Drawing.Point(146, 19);
             this.txtComponentName.Name = "txtComponentName";
+            this.txtComponentName.ReadOnly = true;
             this.txtComponentName.Size = new System.Drawing.Size(207, 20);
             this.txtComponentName.TabIndex = 3;
             // 
@@ -112,6 +114,7 @@
             // 
             this.txtObjectDescription.Location = new System.Drawing.Point(76, 57);
             this.txtObjectDescription.Name = "txtObjectDescription";
+            this.txtObjectDescription.ReadOnly = true;
             this.txtObjectDescription.Size = new System.Drawing.Size(277, 20);
             this.txtObjectDescription.TabIndex = 4;
             // 
@@ -329,6 +332,7 @@
             // 
             this.txtComponentModelQuantity.Location = new System.Drawing.Point(58, 56);
             this.txtComponentModelQuantity.Name = "txtComponentModelQuantity";
+            this.txtComponentModelQuantity.ReadOnly = true;
             this.txtComponentModelQuantity.Size = new System.Drawing.Size(100, 20);
             this.txtComponentModelQuantity.TabIndex = 11;
             // 
@@ -421,23 +425,24 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(7, 56);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.Size = new System.Drawing.Size(30, 13);
             this.label8.TabIndex = 3;
-            this.label8.Text = "quantity";
+            this.label8.Text = "point";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(7, 24);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 13);
+            this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 2;
-            this.label7.Text = "name";
+            this.label7.Text = "model";
             // 
             // txtComponentModelName
             // 
             this.txtComponentModelName.Location = new System.Drawing.Point(53, 24);
             this.txtComponentModelName.Name = "txtComponentModelName";
+            this.txtComponentModelName.ReadOnly = true;
             this.txtComponentModelName.Size = new System.Drawing.Size(100, 20);
             this.txtComponentModelName.TabIndex = 0;
             // 
