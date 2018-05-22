@@ -10,3 +10,4 @@ C:\Users\root\source\repos\Exel_Project\Exel_Project\obj\Debug\Exel_Project.cspr
 C:\Users\root\source\repos\Exel_Project\Exel_Project\obj\Debug\Exel_Project.csproj.CoreCompileInputs.cache
 C:\Users\root\source\repos\Exel_Project\Exel_Project\obj\Debug\Exel_Project.exe
 C:\Users\root\source\repos\Exel_Project\Exel_Project\obj\Debug\Exel_Project.pdb
+C:\Users\root\source\repos\Exel_Project\Exel_Project\obj\Debug\Exel_Project.Line.resources
