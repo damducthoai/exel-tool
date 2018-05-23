@@ -16,7 +16,7 @@ namespace Exel_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BOM());
+            Application.Run(new MainFRM());
         }
     }
 }

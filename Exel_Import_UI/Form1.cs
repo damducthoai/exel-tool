@@ -12,10 +12,15 @@ namespace Exel_Import_UI
         public Form1()
         {
             InitializeComponent();
+            
         }
+
+
 
         private async Task process()
         {
+
+            
             BomModelModelDAO.getInstance().clearData();
             BOMDao.getInstance().clearData();
             string filePath = txtPath.Text;
@@ -68,6 +73,9 @@ namespace Exel_Import_UI
                 }
             }
             MessageBox.Show($"Done {rowCount} row");
+            btnProcess.Enabled = true;
+            
+
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -84,6 +92,10 @@ namespace Exel_Import_UI
 
         private async void btnProcess_Click(object sender, EventArgs e)
         {
+            //progressBar.Enabled = true;
+            
+
+            btnProcess.Enabled = false;
             await process();
         }
     }

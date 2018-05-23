@@ -61,6 +61,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtComponentModelName = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBomModel)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -69,6 +70,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBomModelPageSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBomModelPageNum)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvBom
@@ -77,9 +79,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBom.Location = new System.Drawing.Point(12, 223);
+            this.dgvBom.Location = new System.Drawing.Point(3, 227);
             this.dgvBom.Name = "dgvBom";
-            this.dgvBom.Size = new System.Drawing.Size(385, 207);
+            this.dgvBom.Size = new System.Drawing.Size(436, 331);
             this.dgvBom.TabIndex = 0;
             // 
             // dgvBomModel
@@ -88,9 +90,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBomModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBomModel.Location = new System.Drawing.Point(415, 223);
+            this.dgvBomModel.Location = new System.Drawing.Point(445, 227);
             this.dgvBomModel.Name = "dgvBomModel";
-            this.dgvBomModel.Size = new System.Drawing.Size(421, 207);
+            this.dgvBomModel.Size = new System.Drawing.Size(436, 331);
             this.dgvBomModel.TabIndex = 1;
             // 
             // txtComponentId
@@ -165,12 +167,13 @@
             this.groupBox1.Controls.Add(this.txtComponentId);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtComponentName);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(385, 211);
+            this.groupBox1.Size = new System.Drawing.Size(436, 218);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "bom";
+            this.groupBox1.Text = "component";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnUpdateBom
@@ -295,9 +298,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.btnUpdateModel);
             this.groupBox2.Controls.Add(this.txtComponentModelQuantity);
@@ -311,9 +311,10 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtComponentModelName);
-            this.groupBox2.Location = new System.Drawing.Point(415, 13);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(445, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(421, 210);
+            this.groupBox2.Size = new System.Drawing.Size(436, 218);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "model";
@@ -446,17 +447,34 @@
             this.txtComponentModelName.Size = new System.Drawing.Size(100, 20);
             this.txtComponentModelName.TabIndex = 0;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgvBomModel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgvBom, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 561);
+            this.tableLayoutPanel1.TabIndex = 10;
+            // 
             // BOM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 436);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvBomModel);
-            this.Controls.Add(this.dgvBom);
+            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BOM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BOM";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvBom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBomModel)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -467,8 +485,9 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtBomModelPageSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBomModelPageNum)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -507,6 +526,7 @@
         private System.Windows.Forms.TextBox txtComponentModelQuantity;
         private System.Windows.Forms.Button btnUpdateBom;
         private System.Windows.Forms.Button btnUpdateModel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

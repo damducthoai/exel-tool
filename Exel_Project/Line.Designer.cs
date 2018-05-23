@@ -42,10 +42,12 @@
             this.txtConponentName = new System.Windows.Forms.TextBox();
             this.txtConponentId = new System.Windows.Forms.TextBox();
             this.dgvComponent = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponent)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -62,9 +64,10 @@
             this.groupBox1.Controls.Add(this.pageNum);
             this.groupBox1.Controls.Add(this.txtConponentName);
             this.groupBox1.Controls.Add(this.txtConponentId);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(384, 231);
+            this.groupBox1.Size = new System.Drawing.Size(436, 218);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "component";
@@ -199,18 +202,34 @@
             // dgvComponent
             // 
             this.dgvComponent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComponent.Location = new System.Drawing.Point(12, 261);
+            this.dgvComponent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvComponent.Location = new System.Drawing.Point(3, 227);
             this.dgvComponent.Name = "dgvComponent";
-            this.dgvComponent.Size = new System.Drawing.Size(383, 157);
+            this.dgvComponent.Size = new System.Drawing.Size(436, 331);
             this.dgvComponent.TabIndex = 1;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.dgvComponent, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 561);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // Line
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 430);
-            this.Controls.Add(this.dgvComponent);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Line";
             this.Text = "Line";
             this.groupBox1.ResumeLayout(false);
@@ -218,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponent)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -238,5 +258,6 @@
         private System.Windows.Forms.TextBox txtConponentName;
         private System.Windows.Forms.TextBox txtConponentId;
         private System.Windows.Forms.DataGridView dgvComponent;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

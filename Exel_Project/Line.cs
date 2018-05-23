@@ -15,6 +15,7 @@ namespace Exel_Project
         public Line()
         {
             InitializeComponent();
+            dgvComponent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; 
         }
 
         private async void btnRefreshComponent_Click(object sender, EventArgs e)
