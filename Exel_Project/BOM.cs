@@ -19,6 +19,7 @@ namespace Exel_Project
             InitializeComponent();
             dgvBom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvBomModel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            reloadBom();
         }
 
         private async void btnSearch_Click(object sender, EventArgs e)
