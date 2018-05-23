@@ -318,6 +318,7 @@
             0,
             0,
             0});
+            this.planPageSize.ValueChanged += new System.EventHandler(this.planPageSize_ValueChanged);
             // 
             // planPageNum
             // 
@@ -335,6 +336,7 @@
             0,
             0,
             0});
+            this.planPageNum.ValueChanged += new System.EventHandler(this.planPageNum_ValueChanged);
             // 
             // label9
             // 

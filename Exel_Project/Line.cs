@@ -53,13 +53,16 @@ namespace Exel_Project
             await reloadPlanDGVAsync();
         }
 
-        private void btnCreatePlan_Click(object sender, EventArgs e)
+        private async void btnCreatePlan_Click(object sender, EventArgs e)
         {
             string message = "Plan created successfully";
             try
             {
                 PlanService.getInstance().addNewPlan(getPlanModel());
-            }catch(Exception ex)
+
+                await reloadPlanDGVAsync();
+            }
+            catch(Exception ex)
             {
                 message = ex.Message;
             }
@@ -79,6 +82,16 @@ namespace Exel_Project
         private async void btnDeletePlan_Click(object sender, EventArgs e)
         {
             await deleteCurrentPlanAsync();
+        }
+
+        private async void planPageNum_ValueChanged(object sender, EventArgs e)
+        {
+            await reloadPlanDGVAsync();
+        }
+
+        private async void planPageSize_ValueChanged(object sender, EventArgs e)
+        {
+            await reloadPlanDGVAsync();
         }
     }
 }
