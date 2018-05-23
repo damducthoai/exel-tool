@@ -59,20 +59,30 @@ namespace Exel_Project
                 planDGV.DataSource = bs;
                 dataAdapter.Update(dt);
 
-                txtPlanId.DataBindings.Clear();
-                txtPlanId.Text = "";
+                clearPlanBinding();
+                
                 txtPlanId.DataBindings.Add("Text", bs, "plan_id", true);
-                txtPlanTime.DataBindings.Clear();
+                
                 txtPlanTime.DataBindings.Add("Text", bs, "time", true);
-                txtPlanValue.DataBindings.Clear();
+                
                 txtPlanValue.DataBindings.Add("Text", bs, "data", true);
-                txtModel.DataBindings.Clear();
-                txtModel.Text = "";
+                
                 txtModel.DataBindings.Add("Text", bs, "model", true);
-                txtLineNum.DataBindings.Clear();
+                
                 txtLineNum.DataBindings.Add("Text", bs, "line", true);
             }
 
+        }
+        void clearPlanBinding()
+        {
+            txtPlanId.DataBindings.Clear();
+            txtPlanId.Text = "";
+            txtPlanTime.DataBindings.Clear();
+            txtPlanTime.Text = "";
+            txtPlanValue.DataBindings.Clear();
+            txtModel.DataBindings.Clear();
+            txtModel.Text = "";
+            txtLineNum.DataBindings.Clear();
         }
         decimal getDecimalFromTextBox(TextBox textBox)
         {
