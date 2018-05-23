@@ -60,12 +60,14 @@ namespace Exel_Project
                 dataAdapter.Update(dt);
 
                 txtPlanId.DataBindings.Clear();
+                txtPlanId.Text = "";
                 txtPlanId.DataBindings.Add("Text", bs, "plan_id", true);
                 txtPlanTime.DataBindings.Clear();
                 txtPlanTime.DataBindings.Add("Text", bs, "time", true);
                 txtPlanValue.DataBindings.Clear();
                 txtPlanValue.DataBindings.Add("Text", bs, "data", true);
                 txtModel.DataBindings.Clear();
+                txtModel.Text = "";
                 txtModel.DataBindings.Add("Text", bs, "model", true);
                 txtLineNum.DataBindings.Clear();
                 txtLineNum.DataBindings.Add("Text", bs, "line", true);
