@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,6 +67,27 @@ namespace Exel_DAO
         private BomModelModelDAO()
         {
 
+        }
+        public decimal getIdByName(string name)
+        {
+            string query = $"select id from {DBHelper.tblBomModel} where model_name = '{name}'";
+            return DBHelper.getInstance().excute2GetDecimal(query);
+        }
+        public List<string> getListModelName()
+        {
+            List<string> models = new List<string>();
+            string query = $"select distinct model_name from {DBHelper.tblBomModel}";
+            using (SqlConnection con = DBHelper.getConnection())
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                var reader =  cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    models.Add(reader.GetString(0));
+                }
+            }
+            return models;
         }
     }
 }

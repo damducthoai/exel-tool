@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exel_Project.services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,15 @@ namespace Exel_Project
         public Line()
         {
             InitializeComponent();
-            dgvComponent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells; 
+            dgvComponent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            addLineNumbers();
+            reloadModelName();
+
+            //dateTimePicker.Format = DateTimePickerFormat.Custom;
+            //dateTimePicker.CustomFormat = "dd/MM/yyyy";
+            txtPlanTime.Text = getCurrentDate();
+            reloadComponentDGV();
+            //reloadPlanDGVAsync();
         }
 
         private async void btnRefreshComponent_Click(object sender, EventArgs e)
@@ -40,7 +49,31 @@ namespace Exel_Project
 
         private async void btnRefreshPlan_Click(object sender, EventArgs e)
         {
-            await reloadModelNameAsync();
+            
+            await reloadPlanDGVAsync();
+        }
+
+        private void btnCreatePlan_Click(object sender, EventArgs e)
+        {
+            string message = "Plan created successfully";
+            try
+            {
+                PlanService.getInstance().addNewPlan(getPlanModel());
+            }catch(Exception ex)
+            {
+                message = ex.Message;
+            }
+            MessageBox.Show(message);
+        }
+
+        private async void txtConponentId_TextChanged(object sender, EventArgs e)
+        {
+            await reloadPlanDGVAsync();
+        }
+
+        private async void txtLineNum_TextChanged(object sender, EventArgs e)
+        {
+            await reloadPlanDGVAsync();
         }
     }
 }

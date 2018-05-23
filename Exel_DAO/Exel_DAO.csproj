@@ -47,6 +47,8 @@
     <Compile Include="DBHelper.cs" />
     <Compile Include="ICRUD.cs" />
     <Compile Include="PageAble.cs" />
+    <Compile Include="PlanDao.cs" />
+    <Compile Include="PlanModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
