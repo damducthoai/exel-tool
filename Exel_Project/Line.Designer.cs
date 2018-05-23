@@ -44,31 +44,32 @@
             this.dgvComponent = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtModel = new System.Windows.Forms.ComboBox();
-            this.btnRefreshPlan = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPlanValue = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtLineNum = new System.Windows.Forms.ComboBox();
-            this.btnCreatePlan = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtPlanId = new System.Windows.Forms.TextBox();
-            this.txtPlanTime = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.planPageNum = new System.Windows.Forms.NumericUpDown();
-            this.planPageSize = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.planPageSize = new System.Windows.Forms.NumericUpDown();
+            this.planPageNum = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtPlanTime = new System.Windows.Forms.TextBox();
+            this.txtPlanId = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnCreatePlan = new System.Windows.Forms.Button();
+            this.txtLineNum = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPlanValue = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnRefreshPlan = new System.Windows.Forms.Button();
+            this.txtModel = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.planDGV = new System.Windows.Forms.DataGridView();
+            this.btnDeletePlan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponent)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.planPageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planPageSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planPageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -253,6 +254,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnDeletePlan);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.planPageSize);
@@ -277,129 +279,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "plan";
             // 
-            // label2
+            // label11
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "model";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(223, 62);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(25, 13);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "size";
             // 
-            // txtModel
+            // label10
             // 
-            this.txtModel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtModel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.txtModel.FormattingEnabled = true;
-            this.txtModel.Location = new System.Drawing.Point(57, 48);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(121, 21);
-            this.txtModel.TabIndex = 2;
-            // 
-            // btnRefreshPlan
-            // 
-            this.btnRefreshPlan.Location = new System.Drawing.Point(8, 180);
-            this.btnRefreshPlan.Name = "btnRefreshPlan";
-            this.btnRefreshPlan.Size = new System.Drawing.Size(75, 23);
-            this.btnRefreshPlan.TabIndex = 3;
-            this.btnRefreshPlan.Text = "Refresh";
-            this.btnRefreshPlan.UseVisualStyleBackColor = true;
-            this.btnRefreshPlan.Click += new System.EventHandler(this.btnRefreshPlan_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 83);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "data";
-            // 
-            // txtPlanValue
-            // 
-            this.txtPlanValue.Location = new System.Drawing.Point(57, 83);
-            this.txtPlanValue.Name = "txtPlanValue";
-            this.txtPlanValue.Size = new System.Drawing.Size(121, 20);
-            this.txtPlanValue.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 119);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "line";
-            // 
-            // txtLineNum
-            // 
-            this.txtLineNum.FormattingEnabled = true;
-            this.txtLineNum.Location = new System.Drawing.Point(57, 119);
-            this.txtLineNum.Name = "txtLineNum";
-            this.txtLineNum.Size = new System.Drawing.Size(121, 21);
-            this.txtLineNum.TabIndex = 13;
-            this.txtLineNum.TextChanged += new System.EventHandler(this.txtLineNum_TextChanged);
-            // 
-            // btnCreatePlan
-            // 
-            this.btnCreatePlan.Location = new System.Drawing.Point(117, 180);
-            this.btnCreatePlan.Name = "btnCreatePlan";
-            this.btnCreatePlan.Size = new System.Drawing.Size(75, 23);
-            this.btnCreatePlan.TabIndex = 14;
-            this.btnCreatePlan.Text = "Create Plan";
-            this.btnCreatePlan.UseVisualStyleBackColor = true;
-            this.btnCreatePlan.Click += new System.EventHandler(this.btnCreatePlan_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "id";
-            // 
-            // txtPlanId
-            // 
-            this.txtPlanId.Location = new System.Drawing.Point(57, 20);
-            this.txtPlanId.Name = "txtPlanId";
-            this.txtPlanId.ReadOnly = true;
-            this.txtPlanId.Size = new System.Drawing.Size(121, 20);
-            this.txtPlanId.TabIndex = 17;
-            // 
-            // txtPlanTime
-            // 
-            this.txtPlanTime.Location = new System.Drawing.Point(57, 154);
-            this.txtPlanTime.Name = "txtPlanTime";
-            this.txtPlanTime.ReadOnly = true;
-            this.txtPlanTime.Size = new System.Drawing.Size(121, 20);
-            this.txtPlanTime.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 157);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "time";
-            // 
-            // planPageNum
-            // 
-            this.planPageNum.Location = new System.Drawing.Point(265, 25);
-            this.planPageNum.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.planPageNum.Name = "planPageNum";
-            this.planPageNum.Size = new System.Drawing.Size(120, 20);
-            this.planPageNum.TabIndex = 20;
-            this.planPageNum.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(217, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "page";
             // 
             // planPageSize
             // 
@@ -423,23 +319,129 @@
             0,
             0});
             // 
-            // label10
+            // planPageNum
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(217, 25);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 13);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "page";
+            this.planPageNum.Location = new System.Drawing.Point(265, 25);
+            this.planPageNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.planPageNum.Name = "planPageNum";
+            this.planPageNum.Size = new System.Drawing.Size(120, 20);
+            this.planPageNum.TabIndex = 20;
+            this.planPageNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // label11
+            // label9
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(223, 62);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(25, 13);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "size";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 157);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(26, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "time";
+            // 
+            // txtPlanTime
+            // 
+            this.txtPlanTime.Location = new System.Drawing.Point(57, 154);
+            this.txtPlanTime.Name = "txtPlanTime";
+            this.txtPlanTime.ReadOnly = true;
+            this.txtPlanTime.Size = new System.Drawing.Size(121, 20);
+            this.txtPlanTime.TabIndex = 18;
+            // 
+            // txtPlanId
+            // 
+            this.txtPlanId.Location = new System.Drawing.Point(57, 20);
+            this.txtPlanId.Name = "txtPlanId";
+            this.txtPlanId.ReadOnly = true;
+            this.txtPlanId.Size = new System.Drawing.Size(121, 20);
+            this.txtPlanId.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(23, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(15, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "id";
+            // 
+            // btnCreatePlan
+            // 
+            this.btnCreatePlan.Location = new System.Drawing.Point(117, 180);
+            this.btnCreatePlan.Name = "btnCreatePlan";
+            this.btnCreatePlan.Size = new System.Drawing.Size(75, 23);
+            this.btnCreatePlan.TabIndex = 14;
+            this.btnCreatePlan.Text = "Create Plan";
+            this.btnCreatePlan.UseVisualStyleBackColor = true;
+            this.btnCreatePlan.Click += new System.EventHandler(this.btnCreatePlan_Click);
+            // 
+            // txtLineNum
+            // 
+            this.txtLineNum.FormattingEnabled = true;
+            this.txtLineNum.Location = new System.Drawing.Point(57, 119);
+            this.txtLineNum.Name = "txtLineNum";
+            this.txtLineNum.Size = new System.Drawing.Size(121, 21);
+            this.txtLineNum.TabIndex = 13;
+            this.txtLineNum.TextChanged += new System.EventHandler(this.txtLineNum_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 119);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "line";
+            // 
+            // txtPlanValue
+            // 
+            this.txtPlanValue.Location = new System.Drawing.Point(57, 83);
+            this.txtPlanValue.Name = "txtPlanValue";
+            this.txtPlanValue.Size = new System.Drawing.Size(121, 20);
+            this.txtPlanValue.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 83);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "data";
+            // 
+            // btnRefreshPlan
+            // 
+            this.btnRefreshPlan.Location = new System.Drawing.Point(8, 180);
+            this.btnRefreshPlan.Name = "btnRefreshPlan";
+            this.btnRefreshPlan.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshPlan.TabIndex = 3;
+            this.btnRefreshPlan.Text = "Refresh";
+            this.btnRefreshPlan.UseVisualStyleBackColor = true;
+            this.btnRefreshPlan.Click += new System.EventHandler(this.btnRefreshPlan_Click);
+            // 
+            // txtModel
+            // 
+            this.txtModel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtModel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txtModel.FormattingEnabled = true;
+            this.txtModel.Location = new System.Drawing.Point(57, 48);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(121, 21);
+            this.txtModel.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "model";
             // 
             // planDGV
             // 
@@ -449,6 +451,16 @@
             this.planDGV.Name = "planDGV";
             this.planDGV.Size = new System.Drawing.Size(436, 331);
             this.planDGV.TabIndex = 3;
+            // 
+            // btnDeletePlan
+            // 
+            this.btnDeletePlan.Location = new System.Drawing.Point(220, 179);
+            this.btnDeletePlan.Name = "btnDeletePlan";
+            this.btnDeletePlan.Size = new System.Drawing.Size(75, 23);
+            this.btnDeletePlan.TabIndex = 24;
+            this.btnDeletePlan.Text = "Delete Plan";
+            this.btnDeletePlan.UseVisualStyleBackColor = true;
+            this.btnDeletePlan.Click += new System.EventHandler(this.btnDeletePlan_Click);
             // 
             // Line
             // 
@@ -466,8 +478,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.planPageNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planPageSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planPageNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planDGV)).EndInit();
             this.ResumeLayout(false);
 
@@ -508,5 +520,6 @@
         private System.Windows.Forms.NumericUpDown planPageSize;
         private System.Windows.Forms.NumericUpDown planPageNum;
         private System.Windows.Forms.DataGridView planDGV;
+        private System.Windows.Forms.Button btnDeletePlan;
     }
 }

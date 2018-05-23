@@ -1,4 +1,5 @@
 ﻿using Exel_DAO;
+using Exel_Project.services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,6 +13,27 @@ namespace Exel_Project
 {
     partial class Line
     {
+        async Task deleteCurrentPlanAsync()
+        {
+            deleteCurrentPlan();
+            
+        }
+        void  deleteCurrentPlan()
+        {
+            string message = "delete plan successfully";
+
+            try
+            {
+                PlanService.getInstance().deletePlan(getPlanModel());
+                //await reloadPlanDGVAsync();
+                reloadPlanDGV();
+            }
+            catch(Exception e)
+            {
+                message = e.Message;
+            }
+            MessageBox.Show(message);
+        }
         async Task reloadPlanDGVAsync()
         {
 
@@ -65,12 +87,14 @@ namespace Exel_Project
         }
         PlanModel getPlanModel()
         {
+            decimal plan_id = getDecimalFromTextBox(txtPlanId);
+            
             decimal component_id = getDecimalFromTextBox(txtConponentId);
             string model_name = txtModel.Text;
             decimal plan_data = getDecimalFromTextBox(txtPlanValue);
             decimal plan_line = Convert.ToDecimal(txtLineNum.SelectedValue);
             string plan_time = getCurrentDate();
-            PlanModel plan = new PlanModel { component_id = component_id, model_name = model_name, plan_data = plan_data, plan_line = plan_line, plan_time = plan_time };
+            PlanModel plan = new PlanModel { plan_id = plan_id ,component_id = component_id, model_name = model_name, plan_data = plan_data, plan_line = plan_line, plan_time = plan_time };
             return plan;
         }
         string getCurrentDate()

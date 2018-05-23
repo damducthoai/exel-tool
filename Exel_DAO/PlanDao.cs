@@ -30,7 +30,10 @@ namespace Exel_DAO
 
         public bool delete(PlanModel t)
         {
-            throw new NotImplementedException();
+            string query = $"delete from {DBHelper.tblPlan} where plan_id = {t.plan_id}";
+            DBHelper.getInstance().excuteQuery(query);
+            return true;
+            //throw new NotImplementedException();
         }
 
         public bool deleteById(decimal id)

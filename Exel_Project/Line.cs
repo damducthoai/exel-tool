@@ -75,5 +75,10 @@ namespace Exel_Project
         {
             await reloadPlanDGVAsync();
         }
+
+        private async void btnDeletePlan_Click(object sender, EventArgs e)
+        {
+            await deleteCurrentPlanAsync();
+        }
     }
 }

@@ -30,5 +30,10 @@ namespace Exel_Project.services
             if (PlanDao.getInstance().isExist(plan)) throw new Exception("Plan existed");
             PlanDao.getInstance().add(plan);
         }
+        public void deletePlan(PlanModel plan)
+        {
+            if (plan.plan_id < 1) throw new Exception("Please select a plan first");
+            PlanDao.getInstance().delete(plan);
+        }
     }
 }
