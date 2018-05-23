@@ -43,11 +43,16 @@
             this.txtConponentId = new System.Windows.Forms.TextBox();
             this.dgvComponent = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtModel = new System.Windows.Forms.ComboBox();
+            this.btnRefreshPlan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponent)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -187,6 +192,7 @@
             // 
             // txtConponentName
             // 
+            this.txtConponentName.Enabled = false;
             this.txtConponentName.Location = new System.Drawing.Point(50, 65);
             this.txtConponentName.Name = "txtConponentName";
             this.txtConponentName.Size = new System.Drawing.Size(100, 20);
@@ -194,6 +200,7 @@
             // 
             // txtConponentId
             // 
+            this.txtConponentId.Enabled = false;
             this.txtConponentId.Location = new System.Drawing.Point(50, 28);
             this.txtConponentId.Name = "txtConponentId";
             this.txtConponentId.Size = new System.Drawing.Size(100, 20);
@@ -215,6 +222,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.dgvComponent, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -223,6 +231,48 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 561);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnRefreshPlan);
+            this.groupBox2.Controls.Add(this.txtModel);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(445, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(436, 218);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "plan";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "model";
+            // 
+            // txtModel
+            // 
+            this.txtModel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtModel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txtModel.FormattingEnabled = true;
+            this.txtModel.Location = new System.Drawing.Point(57, 23);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(121, 21);
+            this.txtModel.TabIndex = 2;
+            // 
+            // btnRefreshPlan
+            // 
+            this.btnRefreshPlan.Location = new System.Drawing.Point(10, 151);
+            this.btnRefreshPlan.Name = "btnRefreshPlan";
+            this.btnRefreshPlan.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshPlan.TabIndex = 3;
+            this.btnRefreshPlan.Text = "Refresh";
+            this.btnRefreshPlan.UseVisualStyleBackColor = true;
+            this.btnRefreshPlan.Click += new System.EventHandler(this.btnRefreshPlan_Click);
             // 
             // Line
             // 
@@ -238,6 +288,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComponent)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -259,5 +311,9 @@
         private System.Windows.Forms.TextBox txtConponentId;
         private System.Windows.Forms.DataGridView dgvComponent;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox txtModel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnRefreshPlan;
     }
 }

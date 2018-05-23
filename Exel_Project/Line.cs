@@ -37,5 +37,10 @@ namespace Exel_Project
         {
             await reloadComponentDGVAsync();
         }
+
+        private async void btnRefreshPlan_Click(object sender, EventArgs e)
+        {
+            await reloadModelNameAsync();
+        }
     }
 }

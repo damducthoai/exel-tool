@@ -12,6 +12,16 @@ namespace Exel_Project
 {
     partial class Line
     {
+        async Task reloadModelNameAsync()
+        {
+            reloadModelName();
+        }
+        void reloadModelName()
+        {
+            List<string> data = BomModelModelDAO.getInstance().getListModelName();
+            txtModel.DataSource = data;
+            txtModel.Text = "";
+        }
         async Task reloadComponentDGVAsync()
         {
             reloadComponentDGV();
