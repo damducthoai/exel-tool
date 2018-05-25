@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exel_DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +15,22 @@ namespace Exel_Project
     {
         BOM bom = null;
         Line line = null;
+        Scan scan = null;
         public MainFRM()
         {
             InitializeComponent();
-            loadLine();
+            //loadLine();
+            loadKitting();
+        }
+        void loadKitting()
+        {
+            if (scan == null) scan = new Scan (DBHelper.tblKitting);
+            if (scan.IsDisposed) scan = new Scan(DBHelper.tblKitting);
+            scan.table = DBHelper.tblKitting;
+            scan.MdiParent = this;
+            scan.Show();
+            scan.Text = "Kitting";
+            scan.WindowState = FormWindowState.Maximized;
         }
         void loadBom()
         {
@@ -47,6 +60,11 @@ namespace Exel_Project
         private void lineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadLine();
+        }
+
+        private void scanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadKitting();
         }
     }
 }

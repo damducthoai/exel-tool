@@ -9,11 +9,21 @@ namespace Exel_DAO
 {
     public class DBHelper
     {
+        public static string tblKitting = "kitting";
+        public static string tblNhanle = "nhanle";
+        public static string tblChiacat = "chiacat";
+        public static string tblPmg = "pmg";
+        public static string tblThurut = "thurut";
         public static string tblBom = "bom";
         public static string tblBomModel = "bom_model";
         public static string tblPlan = "planx";
         public static string selectCmdForBomDGV = $"select component_id as id,component_name as name,object_description as description from {tblBom}";
 
+        public static string getQuery4ScanDGV(decimal page, decimal size, string date, string table)
+        {
+            var query = $"select * from {table} where date like '%{date}%' order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
+            return query;
+        }
         public static string getQuery4PlanDGV(decimal page, decimal size, decimal line, decimal componentid, string search)
         {
             string query = $"select plan_id as plan_id, model_name as model, plan_data as data, plan_line as line, plan_time as time from {tblPlan}  join {tblBomModel} on {tblBomModel}.id = {tblPlan}.model_id where plan_line={line} and {DBHelper.tblPlan}.component_id = {componentid} order by plan_id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";

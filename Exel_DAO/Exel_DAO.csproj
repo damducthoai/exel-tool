@@ -50,6 +50,8 @@
     <Compile Include="PlanDao.cs" />
     <Compile Include="PlanModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScanDAO.cs" />
+    <Compile Include="ScanModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
