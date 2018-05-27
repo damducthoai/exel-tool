@@ -10,7 +10,7 @@ namespace Exel_DAO
     {
         private static ScanDAO _instance;
 
-        decimal getTotalByCode(string code, string table)
+        public decimal getTotalByCode(string code, string table)
         {
             var q = $"select ISNULL(SUM(quantity), 0) from {table} where code = '{code}'";
             return DBHelper.getInstance().excute2GetDecimal(q);

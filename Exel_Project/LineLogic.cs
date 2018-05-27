@@ -13,6 +13,7 @@ namespace Exel_Project
 {
     partial class Line
     {
+       
         async Task deleteCurrentPlanAsync()
         {
             deleteCurrentPlan();

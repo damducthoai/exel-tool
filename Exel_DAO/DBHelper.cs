@@ -36,11 +36,11 @@ namespace Exel_DAO
             string query = "";
             if(String.IsNullOrEmpty(search) || String.IsNullOrWhiteSpace(search))
             {
-                query = $"select component_id as id,component_name as name,object_description as description from {tblBom} order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
+                query = $"select component_id as id,component_name as name,(select ISNULL(SUM(kitting.quantity), 0) from kitting where kitting.code = bom.component_name) as kitting, (select ISNULL(SUM(nhanle.quantity), 0) from nhanle where nhanle.code = bom.component_name) as [nhan le],(select ISNULL(SUM(pgmtrave.quantity), 0) from pgmtrave where pgmtrave.code = bom.component_name) as [nhan le],(select ISNULL(SUM(chiacat.quantity), 0) from chiacat where chiacat.code = bom.component_name) as [chia cat],object_description as description from {tblBom} order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
             }
             else
             {
-                query = $"select component_id as id,component_name as name,object_description as description from {tblBom} where component_name LIKE '%{search}%' OR object_description LIKE '%{search}%' order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
+                query = $"select component_id as id,component_name as name,(select ISNULL(SUM(kitting.quantity), 0) from kitting where kitting.code = bom.component_name) as kitting, (select ISNULL(SUM(nhanle.quantity), 0) from nhanle where nhanle.code = bom.component_name) as [nhan le],(select ISNULL(SUM(pgmtrave.quantity), 0) from pgmtrave where pgmtrave.code = bom.component_name) as [nhan le],(select ISNULL(SUM(chiacat.quantity), 0) from chiacat where chiacat.code = bom.component_name) as [chia cat],object_description as description from {tblBom} where component_name LIKE '%{search}%' OR object_description LIKE '%{search}%' order by id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
             }
             return query;
         }

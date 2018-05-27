@@ -30,6 +30,7 @@ namespace Exel_Project
         private async void btnRefreshComponent_Click(object sender, EventArgs e)
         {
             await reloadComponentDGVAsync();
+            //await reloadCountData();
         }
 
         private async void btnSearchComponent_Click(object sender, EventArgs e)
@@ -74,6 +75,7 @@ namespace Exel_Project
             await reloadPlanDGVAsync();
             var m = getPlanModel();
             await reloadModelNameAsync(m.component_id);
+            //await reloadCountData();
         }
 
         private async void txtLineNum_TextChanged(object sender, EventArgs e)
@@ -93,6 +95,17 @@ namespace Exel_Project
 
         private async void planPageSize_ValueChanged(object sender, EventArgs e)
         {
+            await reloadPlanDGVAsync();
+        }
+
+        private async void Line_Shown(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private async void Line_Activated(object sender, EventArgs e)
+        {
+            await reloadComponentDGVAsync();
             await reloadPlanDGVAsync();
         }
     }
