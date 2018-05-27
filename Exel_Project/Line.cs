@@ -108,5 +108,10 @@ namespace Exel_Project
             await reloadComponentDGVAsync();
             await reloadPlanDGVAsync();
         }
+
+        private void txtConponentName_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

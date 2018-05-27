@@ -62,14 +62,8 @@
             this.txtModel = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.planDGV = new System.Windows.Forms.DataGridView();
-            this.txtKitting = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtNhanLe = new System.Windows.Forms.TextBox();
-            this.txtChiaCat = new System.Windows.Forms.TextBox();
-            this.txtPgm = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageNum)).BeginInit();
@@ -83,14 +77,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtPgm);
-            this.groupBox1.Controls.Add(this.txtChiaCat);
-            this.groupBox1.Controls.Add(this.txtNhanLe);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.txtKitting);
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.btnRefreshComponent);
             this.groupBox1.Controls.Add(this.btnSearchComponent);
             this.groupBox1.Controls.Add(this.label5);
@@ -113,7 +101,7 @@
             // 
             // btnRefreshComponent
             // 
-            this.btnRefreshComponent.Location = new System.Drawing.Point(263, 151);
+            this.btnRefreshComponent.Location = new System.Drawing.Point(261, 149);
             this.btnRefreshComponent.Name = "btnRefreshComponent";
             this.btnRefreshComponent.Size = new System.Drawing.Size(75, 23);
             this.btnRefreshComponent.TabIndex = 11;
@@ -123,7 +111,7 @@
             // 
             // btnSearchComponent
             // 
-            this.btnSearchComponent.Location = new System.Drawing.Point(168, 151);
+            this.btnSearchComponent.Location = new System.Drawing.Point(180, 149);
             this.btnSearchComponent.Name = "btnSearchComponent";
             this.btnSearchComponent.Size = new System.Drawing.Size(75, 23);
             this.btnSearchComponent.TabIndex = 10;
@@ -143,7 +131,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(177, 185);
+            this.label4.Location = new System.Drawing.Point(177, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 8;
@@ -152,7 +140,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 185);
+            this.label3.Location = new System.Drawing.Point(9, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 7;
@@ -180,12 +168,12 @@
             // 
             this.txtSearchString.Location = new System.Drawing.Point(50, 151);
             this.txtSearchString.Name = "txtSearchString";
-            this.txtSearchString.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchString.Size = new System.Drawing.Size(120, 20);
             this.txtSearchString.TabIndex = 4;
             // 
             // pageSize
             // 
-            this.pageSize.Location = new System.Drawing.Point(218, 183);
+            this.pageSize.Location = new System.Drawing.Point(218, 112);
             this.pageSize.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -208,7 +196,7 @@
             // 
             // pageNum
             // 
-            this.pageNum.Location = new System.Drawing.Point(50, 183);
+            this.pageNum.Location = new System.Drawing.Point(50, 112);
             this.pageNum.Minimum = new decimal(new int[] {
             1,
             0,
@@ -229,15 +217,16 @@
             this.txtConponentName.Location = new System.Drawing.Point(50, 65);
             this.txtConponentName.Name = "txtConponentName";
             this.txtConponentName.ReadOnly = true;
-            this.txtConponentName.Size = new System.Drawing.Size(100, 20);
+            this.txtConponentName.Size = new System.Drawing.Size(120, 20);
             this.txtConponentName.TabIndex = 1;
+            this.txtConponentName.TextChanged += new System.EventHandler(this.txtConponentName_TextChanged);
             // 
             // txtConponentId
             // 
             this.txtConponentId.Location = new System.Drawing.Point(50, 28);
             this.txtConponentId.Name = "txtConponentId";
             this.txtConponentId.ReadOnly = true;
-            this.txtConponentId.Size = new System.Drawing.Size(100, 20);
+            this.txtConponentId.Size = new System.Drawing.Size(120, 20);
             this.txtConponentId.TabIndex = 0;
             this.txtConponentId.TextChanged += new System.EventHandler(this.txtConponentId_TextChanged);
             // 
@@ -480,69 +469,21 @@
             this.planDGV.Size = new System.Drawing.Size(436, 331);
             this.planDGV.TabIndex = 3;
             // 
-            // txtKitting
+            // textBox1
             // 
-            this.txtKitting.Location = new System.Drawing.Point(263, 22);
-            this.txtKitting.Name = "txtKitting";
-            this.txtKitting.Size = new System.Drawing.Size(146, 20);
-            this.txtKitting.TabIndex = 12;
+            this.textBox1.Location = new System.Drawing.Point(284, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 12;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(202, 25);
+            this.label12.Location = new System.Drawing.Point(201, 34);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.Size = new System.Drawing.Size(62, 13);
             this.label12.TabIndex = 13;
-            this.label12.Text = "kitting";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(202, 58);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 13);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "nhan le";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(202, 86);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 13);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "chia cat";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(202, 121);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(57, 13);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "pgm tra ve";
-            // 
-            // txtNhanLe
-            // 
-            this.txtNhanLe.Location = new System.Drawing.Point(263, 55);
-            this.txtNhanLe.Name = "txtNhanLe";
-            this.txtNhanLe.Size = new System.Drawing.Size(146, 20);
-            this.txtNhanLe.TabIndex = 17;
-            // 
-            // txtChiaCat
-            // 
-            this.txtChiaCat.Location = new System.Drawing.Point(263, 83);
-            this.txtChiaCat.Name = "txtChiaCat";
-            this.txtChiaCat.Size = new System.Drawing.Size(146, 20);
-            this.txtChiaCat.TabIndex = 18;
-            // 
-            // txtPgm
-            // 
-            this.txtPgm.Location = new System.Drawing.Point(263, 118);
-            this.txtPgm.Name = "txtPgm";
-            this.txtPgm.Size = new System.Drawing.Size(146, 20);
-            this.txtPgm.TabIndex = 19;
+            this.label12.Text = "Tồn thực tế";
             // 
             // Line
             // 
@@ -605,13 +546,7 @@
         private System.Windows.Forms.NumericUpDown planPageNum;
         private System.Windows.Forms.DataGridView planDGV;
         private System.Windows.Forms.Button btnDeletePlan;
-        private System.Windows.Forms.TextBox txtPgm;
-        private System.Windows.Forms.TextBox txtChiaCat;
-        private System.Windows.Forms.TextBox txtNhanLe;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtKitting;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

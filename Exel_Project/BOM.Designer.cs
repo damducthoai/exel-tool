@@ -108,7 +108,6 @@
             // 
             this.txtComponentName.Location = new System.Drawing.Point(146, 19);
             this.txtComponentName.Name = "txtComponentName";
-            this.txtComponentName.ReadOnly = true;
             this.txtComponentName.Size = new System.Drawing.Size(207, 20);
             this.txtComponentName.TabIndex = 3;
             // 
@@ -116,7 +115,6 @@
             // 
             this.txtObjectDescription.Location = new System.Drawing.Point(76, 57);
             this.txtObjectDescription.Name = "txtObjectDescription";
-            this.txtObjectDescription.ReadOnly = true;
             this.txtObjectDescription.Size = new System.Drawing.Size(277, 20);
             this.txtObjectDescription.TabIndex = 4;
             // 
@@ -331,9 +329,9 @@
             // 
             // txtComponentModelQuantity
             // 
-            this.txtComponentModelQuantity.Location = new System.Drawing.Point(58, 56);
+            this.txtComponentModelQuantity.Location = new System.Drawing.Point(53, 56);
             this.txtComponentModelQuantity.Name = "txtComponentModelQuantity";
-            this.txtComponentModelQuantity.Size = new System.Drawing.Size(100, 20);
+            this.txtComponentModelQuantity.Size = new System.Drawing.Size(105, 20);
             this.txtComponentModelQuantity.TabIndex = 11;
             // 
             // btnDeleteBomModelDetail
@@ -442,8 +440,7 @@
             // 
             this.txtComponentModelName.Location = new System.Drawing.Point(53, 24);
             this.txtComponentModelName.Name = "txtComponentModelName";
-            this.txtComponentModelName.ReadOnly = true;
-            this.txtComponentModelName.Size = new System.Drawing.Size(100, 20);
+            this.txtComponentModelName.Size = new System.Drawing.Size(105, 20);
             this.txtComponentModelName.TabIndex = 0;
             // 
             // tableLayoutPanel1
