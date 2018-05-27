@@ -17,7 +17,8 @@ namespace Exel_DAO
 
         public decimal add(PlanModel t)
         {
-            string query = $"insert into {DBHelper.tblPlan}(component_id,model_id,plan_data,plan_line,plan_time) values({t.component_id},{t.model_id},{t.plan_data},{t.plan_line},'{t.plan_time}')";
+            var x = BomModelModelDAO.getInstance().getIdByComonentAndModel(t.component_id,t.model_name);
+            string query = $"insert into {DBHelper.tblPlan}(component_id,model_id,plan_data,plan_line,plan_time, model_code,bom_model_id) values({t.component_id},{t.model_id},{t.plan_data},{t.plan_line},'{t.plan_time}','{t.model_name}',{x})";
             DBHelper.getInstance().excuteQuery(query);
             return 1;
             //throw new NotImplementedException();

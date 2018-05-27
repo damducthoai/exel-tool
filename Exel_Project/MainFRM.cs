@@ -19,8 +19,8 @@ namespace Exel_Project
         public MainFRM()
         {
             InitializeComponent();
-            //loadLine();
-            loadKitting();
+            loadLine();
+            //loadKitting();
         }
         void loadKitting()
         {

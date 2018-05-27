@@ -10,6 +10,11 @@ namespace Exel_DAO
     public class BomModelModelDAO:ICRUD<BOM_Model_Model>
     {
         private static BomModelModelDAO _instance;
+        public decimal getIdByComonentAndModel(decimal component_id, string model_name)
+        {
+            var q = $"select id from {DBHelper.tblBomModel} where component_id = {component_id} and model_name = '{model_name}'";
+            return DBHelper.getInstance().excute2GetDecimal(q);
+        }
         public static BomModelModelDAO getInstance()
         {
             if (_instance == null) _instance = new BomModelModelDAO();
@@ -73,6 +78,22 @@ namespace Exel_DAO
             string query = $"select id from {DBHelper.tblBomModel} where model_name = '{name}'";
             return DBHelper.getInstance().excute2GetDecimal(query);
         }
+        public List<string> getListModelName(decimal component_id)
+        {
+            List<string> models = new List<string>();
+            string query = $"select distinct model_name from {DBHelper.tblBomModel} where component_id = {component_id}";
+            using (SqlConnection con = DBHelper.getConnection())
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                var reader =  cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    models.Add(reader.GetString(0));
+                }
+            }
+            return models;
+        }
         public List<string> getListModelName()
         {
             List<string> models = new List<string>();
@@ -81,7 +102,7 @@ namespace Exel_DAO
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
-                var reader =  cmd.ExecuteReader();
+                var reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     models.Add(reader.GetString(0));

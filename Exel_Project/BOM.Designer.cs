@@ -333,7 +333,6 @@
             // 
             this.txtComponentModelQuantity.Location = new System.Drawing.Point(58, 56);
             this.txtComponentModelQuantity.Name = "txtComponentModelQuantity";
-            this.txtComponentModelQuantity.ReadOnly = true;
             this.txtComponentModelQuantity.Size = new System.Drawing.Size(100, 20);
             this.txtComponentModelQuantity.TabIndex = 11;
             // 

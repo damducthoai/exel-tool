@@ -44,6 +44,7 @@
             this.dgvComponent = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnDeletePlan = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.planPageSize = new System.Windows.Forms.NumericUpDown();
@@ -61,7 +62,6 @@
             this.txtModel = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.planDGV = new System.Windows.Forms.DataGridView();
-            this.btnDeletePlan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageNum)).BeginInit();
@@ -127,7 +127,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(177, 110);
+            this.label4.Location = new System.Drawing.Point(177, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 8;
@@ -136,7 +136,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 110);
+            this.label3.Location = new System.Drawing.Point(9, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 7;
@@ -169,7 +169,7 @@
             // 
             // pageSize
             // 
-            this.pageSize.Location = new System.Drawing.Point(218, 108);
+            this.pageSize.Location = new System.Drawing.Point(218, 192);
             this.pageSize.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -192,7 +192,7 @@
             // 
             // pageNum
             // 
-            this.pageNum.Location = new System.Drawing.Point(50, 108);
+            this.pageNum.Location = new System.Drawing.Point(50, 192);
             this.pageNum.Minimum = new decimal(new int[] {
             1,
             0,
@@ -278,6 +278,16 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "plan";
+            // 
+            // btnDeletePlan
+            // 
+            this.btnDeletePlan.Location = new System.Drawing.Point(220, 179);
+            this.btnDeletePlan.Name = "btnDeletePlan";
+            this.btnDeletePlan.Size = new System.Drawing.Size(75, 23);
+            this.btnDeletePlan.TabIndex = 24;
+            this.btnDeletePlan.Text = "Delete Plan";
+            this.btnDeletePlan.UseVisualStyleBackColor = true;
+            this.btnDeletePlan.Click += new System.EventHandler(this.btnDeletePlan_Click);
             // 
             // label11
             // 
@@ -453,16 +463,6 @@
             this.planDGV.Name = "planDGV";
             this.planDGV.Size = new System.Drawing.Size(436, 331);
             this.planDGV.TabIndex = 3;
-            // 
-            // btnDeletePlan
-            // 
-            this.btnDeletePlan.Location = new System.Drawing.Point(220, 179);
-            this.btnDeletePlan.Name = "btnDeletePlan";
-            this.btnDeletePlan.Size = new System.Drawing.Size(75, 23);
-            this.btnDeletePlan.TabIndex = 24;
-            this.btnDeletePlan.Text = "Delete Plan";
-            this.btnDeletePlan.UseVisualStyleBackColor = true;
-            this.btnDeletePlan.Click += new System.EventHandler(this.btnDeletePlan_Click);
             // 
             // Line
             // 

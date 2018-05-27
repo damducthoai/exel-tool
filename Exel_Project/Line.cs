@@ -18,7 +18,7 @@ namespace Exel_Project
             InitializeComponent();
             dgvComponent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             addLineNumbers();
-            reloadModelName();
+            //reloadModelName();
 
             //dateTimePicker.Format = DateTimePickerFormat.Custom;
             //dateTimePicker.CustomFormat = "dd/MM/yyyy";
@@ -72,6 +72,8 @@ namespace Exel_Project
         private async void txtConponentId_TextChanged(object sender, EventArgs e)
         {
             await reloadPlanDGVAsync();
+            var m = getPlanModel();
+            await reloadModelNameAsync(m.component_id);
         }
 
         private async void txtLineNum_TextChanged(object sender, EventArgs e)

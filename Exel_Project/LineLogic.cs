@@ -42,7 +42,7 @@ namespace Exel_Project
         void reloadPlanDGV()
         {
             PlanModel plan = getPlanModel();
-            
+            if (plan.component_id < 1) return;
             string query = DBHelper.getQuery4PlanDGV(planPageNum.Value, planPageSize.Value, plan.plan_line,plan.component_id, "");
             DataTable dt = new DataTable();
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
@@ -124,13 +124,13 @@ namespace Exel_Project
             }
             txtLineNum.DataSource = data;
         }
-        async Task reloadModelNameAsync()
+        async Task reloadModelNameAsync(decimal component_id)
         {
-            reloadModelName();
+            reloadModelName(component_id);
         }
-        void reloadModelName()
+        void reloadModelName(decimal component_id)
         {
-            List<string> data = BomModelModelDAO.getInstance().getListModelName();
+            List<string> data = BomModelModelDAO.getInstance().getListModelName(component_id);
             txtModel.DataSource = data;
             txtModel.Text = "";
         }
