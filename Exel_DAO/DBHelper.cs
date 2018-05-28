@@ -27,7 +27,7 @@ namespace Exel_DAO
         public static string getQuery4PlanDGV(decimal page, decimal size, decimal line, decimal componentid, string search)
         {
             //string query = $"select plan_id as plan_id, model_name as model, plan_data as data, plan_line as line, plan_time as time from {tblPlan}  join {tblBomModel} on {tblBomModel}.id = {tblPlan}.model_id where plan_line={line} and {DBHelper.tblPlan}.component_id = {componentid} order by plan_id OFFSET {size * (page - 1)} ROWS FETCH NEXT {size} ROWS ONLY";
-            var query = $"select planx.plan_id, planx.plan_data* bom_model.model_value as [plan], planx.model_code as model, planx.plan_data as data, planx.plan_time as time, planx.plan_line as line from planx, bom_model where planx.bom_model_id = bom_model.id and bom_model.component_id = {componentid}";
+            var query = $"select planx.plan_id, planx.plan_data* bom_model.model_value as [plan], bom_model.model_value as point, planx.model_code as model, planx.plan_data as data, planx.plan_time as time, planx.plan_line as line from planx, bom_model where planx.bom_model_id = bom_model.id and bom_model.component_id = {componentid}";
             return query;
         }
 
