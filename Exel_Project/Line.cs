@@ -80,7 +80,7 @@ namespace Exel_Project
 
         private async void txtLineNum_TextChanged(object sender, EventArgs e)
         {
-            await reloadPlanDGVAsync();
+            //await reloadPlanDGVAsync();
         }
 
         private async void btnDeletePlan_Click(object sender, EventArgs e)

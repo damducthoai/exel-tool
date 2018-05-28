@@ -82,7 +82,7 @@ namespace Exel_Project
             txtPlanTime.Text = "";
             txtPlanValue.DataBindings.Clear();
             txtModel.DataBindings.Clear();
-            txtModel.Text = "";
+            //txtModel.Text = "";
             txtLineNum.DataBindings.Clear();
         }
         decimal getDecimalFromTextBox(TextBox textBox)
@@ -133,7 +133,7 @@ namespace Exel_Project
         {
             List<string> data = BomModelModelDAO.getInstance().getListModelName(component_id);
             txtModel.DataSource = data;
-            txtModel.Text = "";
+            //txtModel.Text = "";
         }
         async Task reloadComponentDGVAsync()
         {
