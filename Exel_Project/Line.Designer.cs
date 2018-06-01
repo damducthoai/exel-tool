@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnRefreshComponent = new System.Windows.Forms.Button();
             this.btnSearchComponent = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,8 +64,6 @@
             this.txtModel = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.planDGV = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageNum)).BeginInit();
@@ -98,6 +98,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "component";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(201, 34);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Tồn thực tế";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(284, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 12;
             // 
             // btnRefreshComponent
             // 
@@ -399,6 +415,7 @@
             // 
             // txtLineNum
             // 
+            this.txtLineNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtLineNum.FormattingEnabled = true;
             this.txtLineNum.Location = new System.Drawing.Point(57, 119);
             this.txtLineNum.Name = "txtLineNum";
@@ -445,6 +462,7 @@
             // 
             this.txtModel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtModel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txtModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtModel.FormattingEnabled = true;
             this.txtModel.Location = new System.Drawing.Point(57, 48);
             this.txtModel.Name = "txtModel";
@@ -468,22 +486,6 @@
             this.planDGV.Name = "planDGV";
             this.planDGV.Size = new System.Drawing.Size(436, 331);
             this.planDGV.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(284, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(201, 34);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 13);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Tồn thực tế";
             // 
             // Line
             // 

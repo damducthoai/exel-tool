@@ -16,6 +16,7 @@ namespace Exel_Project
         BOM bom = null;
         Line line = null;
         Scan scan = null;
+        Scan nhanle = null;
         public MainFRM()
         {
             InitializeComponent();
@@ -65,6 +66,19 @@ namespace Exel_Project
         private void scanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadKitting();
+        }
+
+        private void nhanLeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadNhanLe();
+        }
+        void loadNhanLe()
+        {
+            if(nhanle == null) nhanle = new Scan(DBHelper.tblNhanle);
+            if(nhanle.IsDisposed) nhanle = new Scan(DBHelper.tblNhanle);
+            nhanle.MdiParent = this;
+            nhanle.Show();
+
         }
     }
 }

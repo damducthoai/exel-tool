@@ -32,6 +32,7 @@
             this.lineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhanLeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +41,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lineToolStripMenuItem,
             this.bomToolStripMenuItem,
-            this.scanToolStripMenuItem});
+            this.scanToolStripMenuItem,
+            this.nhanLeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
@@ -68,6 +70,13 @@
             this.scanToolStripMenuItem.Text = "Kitting";
             this.scanToolStripMenuItem.Click += new System.EventHandler(this.scanToolStripMenuItem_Click);
             // 
+            // nhanLeToolStripMenuItem
+            // 
+            this.nhanLeToolStripMenuItem.Name = "nhanLeToolStripMenuItem";
+            this.nhanLeToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.nhanLeToolStripMenuItem.Text = "Nhan Le";
+            this.nhanLeToolStripMenuItem.Click += new System.EventHandler(this.nhanLeToolStripMenuItem_Click);
+            // 
             // MainFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,5 +101,6 @@
         private System.Windows.Forms.ToolStripMenuItem bomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nhanLeToolStripMenuItem;
     }
 }
